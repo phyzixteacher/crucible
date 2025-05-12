@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucible Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="hud">
+            <div class="resources">
+                <div class="veskar">Veskar: <span id="veskarCount">25</span></div>
+                <div class="opul">Opul: <span id="opulCount">0</span></div>
+            </div>
+            <div class="health">
+                <div class="shield-bar">Shield: <span id="shieldValue">100</span>%</div>
+            </div>
+        </div>
+    </div>
+    <div class="instructions">
+        <h2>Controls:</h2>
+        <p>Right-click to move your ship</p>
+        <p>Left-click on a resource node to target it</p>
+        <p>Press Space to fire at targeted node</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
