@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #111;
+    color: #eee;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+canvas {
+    background-color: #1a1a2e;
+}
+
+.hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.resources {
+    float: right;
+}
+
+.veskar {
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+.opul {
+    color: #1e90ff;
+}
+
+.shield-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #00ff00;
+}
+
+.instructions {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #222;
+    border-radius: 5px;
+}
