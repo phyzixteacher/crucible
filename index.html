@@ -3,29 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crucible Prototype</title>
+    <title>Crucible Game Mode</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
-        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <canvas id="gameCanvas" width="1200" height="800"></canvas>
+        
         <div class="hud">
+            <div class="score-display">
+                <div class="score">Score: <span id="scoreValue">0</span></div>
+                <div class="match-timer">Time: <span id="matchTimer">15:00</span></div>
+            </div>
+            
             <div class="resources">
                 <div class="veskar">Veskar: <span id="veskarCount">25</span></div>
                 <div class="opul">Opul: <span id="opulCount">0</span></div>
             </div>
-            <div class="health">
+            
+            <div class="health-display">
                 <div class="shield-bar">Shield: <span id="shieldValue">100</span>%</div>
+            </div>
+            
+            <div class="modules" id="modules">
+                <!-- Modules will be added here dynamically -->
+                <div class="module-slot default-module">
+                    <div class="module-icon">AC</div>
+                    <div class="module-name">Auto Cannon</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="moduleShop" class="module-shop">
+            <div class="shop-header">
+                <h2>Module Shop</h2>
+                <div class="shop-cost">Cost: <span id="shopCost">5</span> Opul</div>
+                <button id="closeShop">Close</button>
+            </div>
+            <div class="shop-options" id="shopOptions">
+                <!-- Module options will be added here dynamically -->
+            </div>
+            <div class="shop-actions">
+                <button id="rerollOptions" class="reroll-button">Reroll Options (2 Opul)</button>
             </div>
         </div>
     </div>
-    <div class="instructions">
-        <h2>Controls:</h2>
-        <p>Right-click to move your ship</p>
-        <p>Left-click on a resource node to target it</p>
-        <p>Press Space to fire at targeted node</p>
+    
+    <div id="gameOverlay" class="game-overlay">
+        <div id="tutorialOverlay" class="tutorial-overlay">
+            <h2>Welcome to Crucible</h2>
+            <p>Right-click to move your ship</p>
+            <p>Left-click on a resource node to target it</p>
+            <p>Press Space to fire at your target</p>
+            <p>Collect resources to purchase modules</p>
+            <button id="startGame">Begin Match</button>
+        </div>
+        
+        <div id="gameOverScreen" class="game-over-screen">
+            <h2>Match Complete</h2>
+            <div class="final-score">Final Score: <span id="finalScore">0</span></div>
+            <div class="stats">
+                <div>Resources Collected: <span id="resourcesCollected">0</span></div>
+                <div>Nodes Destroyed: <span id="nodesDestroyed">0</span></div>
+                <div>Ships Destroyed: <span id="shipsDestroyed">0</span></div>
+            </div>
+            <button id="playAgain">Play Again</button>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="config.js"></script>
+    <script src="modules.js"></script>
     <script src="game.js"></script>
 </body>
 </html>
